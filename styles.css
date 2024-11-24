@@ -4,7 +4,7 @@
   --margin-small: 8px;
   --main-color: rgb(0, 104, 201);
   --secondary-color: rgb(227, 231, 237);
-  --accent-color: rgb(255, 208, 37);
+  --accent-color: rgb(255, 186, 37);
 }
 
 * {
@@ -140,6 +140,19 @@ input, button, textarea, select {
 
 .searchbar {
   padding: var(--margin);
+  display: flex;
+  gap: var(--margin);
+}
+
+.searchbar img {
+  height: 1.5rem;
+}
+
+.searchbar input {
+  width: 80ch;
+  background-color: var(--secondary-color);
+  border-radius: var(--margin);
+  border: none;
 }
 
 .notifications {
@@ -168,6 +181,14 @@ input, button, textarea, select {
   padding: var(--margin);
   box-shadow: 1px 10px black;
   align-items: center;
+}
+
+.greeting {
+  font-weight: bold;
+}
+
+.greeting .username {
+  font-size: 1.5rem;
 }
 
 .buttons {
@@ -215,6 +236,42 @@ button {
   padding: var(--margin);
 }
 
+.card {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  gap: var(--margin-small);
+  overflow: hidden;
+}
+
+.accent-bar {
+  background-color: var(--accent-color);
+  grid-area: 1 / 1 / -1 / 2;
+  transform: scale(2) translate(calc(-1.5*var(--margin)), 0);
+}
+
+.card h3 {
+  grid-area: 1 / 2 / 2 / 3;
+  transform: translate(calc(-1.5*var(--margin)), 0);
+}
+
+.card p {
+  grid-area: 2 / 2 / 3 / 3;
+  transform: translate(calc(-1.5*var(--margin)), 0);
+}
+
+.card .icons {
+  grid-area: 3 / 2 / 4 / 3;
+  display: flex;
+  gap: var(--margin);
+  align-self: end;
+  justify-self: end;
+}
+
+.icons img {
+  height: 1.5rem;
+}
+
 .info-col {
   grid-area: 1 / 2 / 2 / -1;
   display: grid;
@@ -230,6 +287,11 @@ button {
   display: grid;
   grid-template-rows: 2em 1fr;
   gap: var(--margin);
+}
+
+hr {
+  margin-bottom: var(--margin);
+  margin-top: var(--margin);
 }
 
 .trending {
